@@ -16,13 +16,51 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+   self.drawingView.pathToDraw = [[UIBezierPath alloc] init];
+    [self.drawingView.pathToDraw setLineWidth:10.0];
+    
 }
 
+- (IBAction)sliderValueChanged:(UISlider *)sender {
+    
+    [self.drawingView.pathToDraw setLineWidth:sender.value];
+    
+}
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)clearDrawing:(UIBarButtonItem *)sender {
+    
+    [self.drawingView.pathToDraw removeAllPoints];
+    [self.drawingView setNeedsDisplay];
+    
+}
+
+// Touch management
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [touches anyObject];
+    CGPoint point = [touch locationInView:[self drawingView]];
+    [self.drawingView.pathToDraw moveToPoint:point];
+    
+}
+
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [touches anyObject];
+    CGPoint point = [touch locationInView:[self drawingView]];
+    [self.drawingView.pathToDraw addLineToPoint:point];
+    [self.drawingView setNeedsDisplay];
+    
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self touchesMoved:touches withEvent:event];
+    
+}
+
+- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self touchesMoved:touches withEvent:event];
 }
 
 

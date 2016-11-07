@@ -10,4 +10,6 @@
 
 @interface DrawingView : UIView
 
+@property (strong, nonatomic) UIBezierPath *pathToDraw;
+
 @end
