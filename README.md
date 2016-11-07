@@ -1,2 +1,2 @@
 # DrawMyStickers
-A project of an iOS app to drax stickers for iMessage
+A project of an iOS app to draw stickers for iMessage
