@@ -1,18 +1,18 @@
 //
-//  ViewController.m
+//  MainViewController.m
 //  DrawMyStickers
 //
-//  Created by betaman on 07/11/2016.
+//  Created by Pottt on 07/11/2016.
 //  Copyright © 2016 Jerome Pottier. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainViewController.h"
 
-@interface ViewController ()
+@interface MainViewController ()
 
 @end
 
-@implementation ViewController
+@implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
