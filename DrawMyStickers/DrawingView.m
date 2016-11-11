@@ -19,20 +19,50 @@
     self = [super initWithFrame:frame];
     if(self) {
         self.pathToDraw = [[UIBezierPath alloc] init];
-//        [self setBackgroundColor:[UIColor whiteColor]];
+        self.backgroundDrawingImage = [[UIImage alloc] init];
     }
-    
+        
     return self;
 }
 
 
+
 - (void)drawRect:(CGRect)rect {
-    
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-    [[UIColor blackColor] setStroke];
+  
+  
+    [self.backgroundDrawingImage drawInRect:rect];
+    [[UIColor orangeColor] set];
     [self.pathToDraw stroke];
+        
+}
+
+- (void)clearView {
+    
+    UIGraphicsBeginImageContext(self.bounds.size);
+    UIBezierPath *rectPath = [UIBezierPath bezierPathWithRect:self.bounds];
+    [self.backgroundColor set];
+    [rectPath fill];
+   
+    self.backgroundDrawingImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
     
     
 }
+
+- (void)saveContext {
+    
+    
+    
+    UIGraphicsBeginImageContext(self.bounds.size);
+    [self.backgroundDrawingImage drawInRect:self.bounds];
+    [[UIColor orangeColor] set];
+    [self.pathToDraw stroke];
+
+    self.backgroundDrawingImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+}
+
+
 
 @end

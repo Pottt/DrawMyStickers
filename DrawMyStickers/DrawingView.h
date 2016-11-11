@@ -11,5 +11,9 @@
 @interface DrawingView : UIView
 
 @property (strong, nonatomic) UIBezierPath *pathToDraw;
+@property (strong, nonatomic) UIImage *backgroundDrawingImage;
+
+- (void) clearView;
+- (void) saveContext;
 
 @end

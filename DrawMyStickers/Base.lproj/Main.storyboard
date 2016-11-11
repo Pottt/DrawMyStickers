@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Draw a sticker-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" sceneMemberID="viewController">
@@ -22,18 +22,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lco-qP-fA2" customClass="DrawingView">
+                                <rect key="frame" x="0.0" y="110" width="375" height="557"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="5" maxValue="55" translatesAutoresizingMaskIntoConstraints="NO" id="aV0-aY-95F">
                                 <rect key="frame" x="14" y="72" width="347" height="31"/>
                                 <connections>
                                     <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="gDK-Z4-dHe"/>
                                 </connections>
                             </slider>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lco-qP-fA2" customClass="DrawingView">
-                                <rect key="frame" x="0.0" y="110" width="375" height="557"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Lco-qP-fA2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="JgJ-7t-T70"/>
                             <constraint firstItem="Lco-qP-fA2" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="JuM-YG-vFA"/>
@@ -44,7 +44,7 @@
                             <constraint firstItem="Lco-qP-fA2" firstAttribute="top" secondItem="aV0-aY-95F" secondAttribute="bottom" constant="8" symbolic="YES" id="tkP-RT-Eyi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Draw a sticker" id="mnT-o2-JyS">
+                    <navigationItem key="navigationItem" id="mnT-o2-JyS">
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="lOD-p0-jNL">
                             <connections>
                                 <action selector="clearDrawing:" destination="BYZ-38-t0r" id="CJB-pz-jHU"/>

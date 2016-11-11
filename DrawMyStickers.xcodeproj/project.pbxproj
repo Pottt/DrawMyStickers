@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4E0AA00F1DD1029600FB51F4 /* DrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0AA00E1DD1029600FB51F4 /* DrawingView.m */; };
-		4E0AA0121DD1040800FB51F4 /* DrawingPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0AA0111DD1040800FB51F4 /* DrawingPath.m */; };
 		4E0AA0151DD108B200FB51F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E0AA0141DD108B200FB51F4 /* CoreGraphics.framework */; };
 		4E6D25A21DD0F43A003214E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6D25A11DD0F43A003214E9 /* main.m */; };
 		4E6D25A51DD0F43A003214E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6D25A41DD0F43A003214E9 /* AppDelegate.m */; };
@@ -21,8 +20,6 @@
 /* Begin PBXFileReference section */
 		4E0AA00D1DD1029600FB51F4 /* DrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingView.h; sourceTree = "<group>"; };
 		4E0AA00E1DD1029600FB51F4 /* DrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingView.m; sourceTree = "<group>"; };
-		4E0AA0101DD1040800FB51F4 /* DrawingPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingPath.h; sourceTree = "<group>"; };
-		4E0AA0111DD1040800FB51F4 /* DrawingPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingPath.m; sourceTree = "<group>"; };
 		4E0AA0141DD108B200FB51F4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		4E6D259D1DD0F43A003214E9 /* DrawMyStickers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawMyStickers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E6D25A11DD0F43A003214E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -81,8 +78,6 @@
 				4E6D25A61DD0F43A003214E9 /* MainViewController.h */,
 				4E6D25A71DD0F43A003214E9 /* MainViewController.m */,
 				4E6D25A91DD0F43A003214E9 /* Main.storyboard */,
-				4E0AA0101DD1040800FB51F4 /* DrawingPath.h */,
-				4E0AA0111DD1040800FB51F4 /* DrawingPath.m */,
 				4E0AA00D1DD1029600FB51F4 /* DrawingView.h */,
 				4E0AA00E1DD1029600FB51F4 /* DrawingView.m */,
 				4E6D25AC1DD0F43A003214E9 /* Assets.xcassets */,
@@ -177,7 +172,6 @@
 				4E6D25A51DD0F43A003214E9 /* AppDelegate.m in Sources */,
 				4E6D25A21DD0F43A003214E9 /* main.m in Sources */,
 				4E0AA00F1DD1029600FB51F4 /* DrawingView.m in Sources */,
-				4E0AA0121DD1040800FB51F4 /* DrawingPath.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

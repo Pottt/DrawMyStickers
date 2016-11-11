@@ -15,9 +15,10 @@
 @implementation MainViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     
-   self.drawingView.pathToDraw = [[UIBezierPath alloc] init];
+    self.drawingView.pathToDraw = [[UIBezierPath alloc] init];
     [self.drawingView.pathToDraw setLineWidth:10.0];
     
 }
@@ -31,6 +32,7 @@
 - (IBAction)clearDrawing:(UIBarButtonItem *)sender {
     
     [self.drawingView.pathToDraw removeAllPoints];
+    [self.drawingView clearView];
     [self.drawingView setNeedsDisplay];
     
 }
@@ -52,15 +54,24 @@
     [self.drawingView.pathToDraw addLineToPoint:point];
     [self.drawingView setNeedsDisplay];
     
+    
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self touchesMoved:touches withEvent:event];
+    
+    UITouch *touch = [touches anyObject];
+    CGPoint point = [touch locationInView:[self drawingView]];
+    [self.drawingView.pathToDraw addLineToPoint:point];
+    [self.drawingView setNeedsDisplay];
+    [self.drawingView saveContext];
+    
+    [self.drawingView.pathToDraw removeAllPoints];
     
 }
 
 - (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self touchesMoved:touches withEvent:event];
+    
+    [self touchesEnded:touches withEvent:event];
 }
 
 
