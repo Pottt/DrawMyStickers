@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 
+
 @interface MainViewController ()
 
 @end
@@ -18,15 +19,46 @@
     
     [super viewDidLoad];
     
-    self.drawingView.pathToDraw = [[UIBezierPath alloc] init];
-    [self.drawingView.pathToDraw setLineWidth:10.0];
+    
+    [self initLineWidthView];
+    
+    self.drawingInfo = [NSKeyedUnarchiver unarchiveObjectWithFile:[self archivePath]];
+    
+    
+    if(!self.drawingInfo) {
+        
+        self.drawingInfo = [[DrawingInfo alloc] init];
+        self.drawingInfo.pathColor = [UIColor blackColor];
+        
+        }
+    
+    NSString *imagePath = [[self archivePath] stringByAppendingString:@"ImagePath"];
+    NSData *data = [NSData dataWithContentsOfFile:imagePath];
+    self.drawingView.backgroundDrawingImage = [UIImage imageWithData:data];
+    
+
+    self.drawingInfo.bezierPath = [[UIBezierPath alloc] init];
+    self.drawingView.pathToDraw = self.drawingInfo.bezierPath;
+    self.drawingView.pathColor = self.drawingInfo.pathColor;
+    
+    self.drawingView.pathColor = [UIColor blackColor];
+    
+    [self.drawingView setNeedsDisplay];
     
 }
 
 - (IBAction)sliderValueChanged:(UISlider *)sender {
     
     [self.drawingView.pathToDraw setLineWidth:sender.value];
+    [self.lineWidthView setLineWidth:sender.value];
+    [self.lineWidthView setNeedsDisplay];
     
+    
+}
+
+- (IBAction)sliderTouched:(UISlider *)sender {
+    
+    [self.lineWidthView setHidden:NO];
 }
 
 - (IBAction)clearDrawing:(UIBarButtonItem *)sender {
@@ -35,6 +67,14 @@
     [self.drawingView clearView];
     [self.drawingView setNeedsDisplay];
     
+}
+
+- (IBAction)sliderTouchUpInside:(UISlider *)sender {
+    
+    [self.lineWidthView setHidden:YES];
+}
+- (IBAction)sliderTouchUpOutside:(UISlider *)sender {
+    [self sliderTouchUpInside:sender];
 }
 
 // Touch management
@@ -53,7 +93,7 @@
     CGPoint point = [touch locationInView:[self drawingView]];
     [self.drawingView.pathToDraw addLineToPoint:point];
     [self.drawingView setNeedsDisplay];
-    
+ 
     
 }
 
@@ -67,6 +107,7 @@
     
     [self.drawingView.pathToDraw removeAllPoints];
     
+    
 }
 
 - (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -74,5 +115,44 @@
     [self touchesEnded:touches withEvent:event];
 }
 
+// NSCoding
+
+-(NSString *)archivePath {
+    // Returns a string representing the absolute path for archiving drawing
+    
+    NSString *docsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *filename = [docsPath stringByAppendingPathComponent:@"drawingInfo"];
+    
+    return filename;
+}
+
+-(BOOL)saveDrawing {
+    // archive DrawingView to archivePath
+    
+    
+    BOOL isSuccessfullySaved = [NSKeyedArchiver archiveRootObject:self.drawingInfo toFile:[self archivePath]];
+    
+    NSData *data = UIImagePNGRepresentation(self.drawingView.backgroundDrawingImage);
+    NSString *imagePath = [[self archivePath] stringByAppendingString:@"ImagePath"];
+    [data writeToFile:imagePath atomically:YES];
+   
+    return isSuccessfullySaved;
+}
+
+// MARK: LineWidthView management
+
+- (void)initLineWidthView {
+    
+    CGFloat lineWidthToDraw = self.slider.value;
+    CGRect frame = CGRectMake((self.view.frame.size.width - 100) / 2.0, (self.view.frame.size.height - 100) / 2.0, 100.0, 100.0);
+    
+    
+    self.lineWidthView = [[LineWidthView alloc] initWithFrame:frame];
+    [self.lineWidthView setLineWidth:lineWidthToDraw];
+    [self.lineWidthView setHidden:YES];
+    
+    [self.view addSubview:self.lineWidthView];
+    
+}
 
 @end

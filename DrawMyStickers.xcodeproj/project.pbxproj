@@ -15,6 +15,8 @@
 		4E6D25AB1DD0F43A003214E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E6D25A91DD0F43A003214E9 /* Main.storyboard */; };
 		4E6D25AD1DD0F43A003214E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E6D25AC1DD0F43A003214E9 /* Assets.xcassets */; };
 		4E6D25B01DD0F43A003214E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E6D25AE1DD0F43A003214E9 /* LaunchScreen.storyboard */; };
+		4ECD42641DE1F910005561E3 /* LineWidthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECD42631DE1F910005561E3 /* LineWidthView.m */; };
+		4EF89E2E1DD7805A000A2893 /* DrawingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF89E2D1DD7805A000A2893 /* DrawingInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,10 @@
 		4E6D25AC1DD0F43A003214E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E6D25AF1DD0F43A003214E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E6D25B11DD0F43A003214E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4ECD42621DE1F910005561E3 /* LineWidthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineWidthView.h; sourceTree = "<group>"; };
+		4ECD42631DE1F910005561E3 /* LineWidthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineWidthView.m; sourceTree = "<group>"; };
+		4EF89E2C1DD7805A000A2893 /* DrawingInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingInfo.h; sourceTree = "<group>"; };
+		4EF89E2D1DD7805A000A2893 /* DrawingInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +83,11 @@
 				4E6D25A41DD0F43A003214E9 /* AppDelegate.m */,
 				4E6D25A61DD0F43A003214E9 /* MainViewController.h */,
 				4E6D25A71DD0F43A003214E9 /* MainViewController.m */,
+				4EF89E2C1DD7805A000A2893 /* DrawingInfo.h */,
+				4EF89E2D1DD7805A000A2893 /* DrawingInfo.m */,
 				4E6D25A91DD0F43A003214E9 /* Main.storyboard */,
+				4ECD42621DE1F910005561E3 /* LineWidthView.h */,
+				4ECD42631DE1F910005561E3 /* LineWidthView.m */,
 				4E0AA00D1DD1029600FB51F4 /* DrawingView.h */,
 				4E0AA00E1DD1029600FB51F4 /* DrawingView.m */,
 				4E6D25AC1DD0F43A003214E9 /* Assets.xcassets */,
@@ -169,6 +179,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E6D25A81DD0F43A003214E9 /* MainViewController.m in Sources */,
+				4ECD42641DE1F910005561E3 /* LineWidthView.m in Sources */,
+				4EF89E2E1DD7805A000A2893 /* DrawingInfo.m in Sources */,
 				4E6D25A51DD0F43A003214E9 /* AppDelegate.m in Sources */,
 				4E6D25A21DD0F43A003214E9 /* main.m in Sources */,
 				4E0AA00F1DD1029600FB51F4 /* DrawingView.m in Sources */,

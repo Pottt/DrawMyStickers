@@ -10,6 +10,8 @@
 
 @implementation DrawingView
 
+// Initializers
+
 - (instancetype)init {
     return [self initWithFrame:CGRectZero];
 }
@@ -20,23 +22,24 @@
     if(self) {
         self.pathToDraw = [[UIBezierPath alloc] init];
         self.backgroundDrawingImage = [[UIImage alloc] init];
+        self.pathColor = [UIColor blackColor];
     }
         
     return self;
 }
 
 
-
 - (void)drawRect:(CGRect)rect {
   
   
     [self.backgroundDrawingImage drawInRect:rect];
-    [[UIColor orangeColor] set];
+    [self.pathColor set];
     [self.pathToDraw stroke];
-        
+    
 }
 
 - (void)clearView {
+    // Removes all drawing inside view
     
     UIGraphicsBeginImageContext(self.bounds.size);
     UIBezierPath *rectPath = [UIBezierPath bezierPathWithRect:self.bounds];
@@ -50,12 +53,11 @@
 }
 
 - (void)saveContext {
-    
-    
+    //assigns drawing to backgroundDrawingImage
     
     UIGraphicsBeginImageContext(self.bounds.size);
     [self.backgroundDrawingImage drawInRect:self.bounds];
-    [[UIColor orangeColor] set];
+    [self.pathColor set];
     [self.pathToDraw stroke];
 
     self.backgroundDrawingImage = UIGraphicsGetImageFromCurrentImageContext();

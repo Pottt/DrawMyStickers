@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) UIBezierPath *pathToDraw;
 @property (strong, nonatomic) UIImage *backgroundDrawingImage;
+@property (strong, nonatomic) UIColor *pathColor;
 
 - (void) clearView;
 - (void) saveContext;
