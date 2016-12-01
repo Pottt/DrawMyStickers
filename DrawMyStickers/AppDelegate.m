@@ -31,13 +31,10 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     
+    // Time to save drawing !
     MainViewController *vc = [[[self.window rootViewController] childViewControllers] objectAtIndex:0];
-    if(![vc saveDrawing]) {
-        NSLog(@"Failed to save Drawing");
-        
-        
-    }
-
+    [vc saveDrawing];
+    
    }
 
 

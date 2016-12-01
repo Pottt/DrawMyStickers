@@ -20,26 +20,14 @@
     [super viewDidLoad];
     
     
+    
     [self initLineWidthView];
-    
-    self.drawingInfo = [NSKeyedUnarchiver unarchiveObjectWithFile:[self archivePath]];
-    
-    
-    if(!self.drawingInfo) {
-        
-        self.drawingInfo = [[DrawingInfo alloc] init];
-        self.drawingInfo.pathColor = [UIColor blackColor];
-        
-        }
-    
+  
     NSString *imagePath = [[self archivePath] stringByAppendingString:@"ImagePath"];
     NSData *data = [NSData dataWithContentsOfFile:imagePath];
     self.drawingView.backgroundDrawingImage = [UIImage imageWithData:data];
     
-
-    self.drawingInfo.bezierPath = [[UIBezierPath alloc] init];
-    self.drawingView.pathToDraw = self.drawingInfo.bezierPath;
-    self.drawingView.pathColor = self.drawingInfo.pathColor;
+    self.drawingView.pathToDraw = [[UIBezierPath alloc] init];
     
     self.drawingView.pathColor = [UIColor blackColor];
     
@@ -67,6 +55,9 @@
     [self.drawingView clearView];
     [self.drawingView setNeedsDisplay];
     
+}
+
+- (IBAction)brushTouched:(UIBarButtonItem *)sender {
 }
 
 - (IBAction)sliderTouchUpInside:(UISlider *)sender {
@@ -126,17 +117,13 @@
     return filename;
 }
 
--(BOOL)saveDrawing {
+-(void)saveDrawing {
     // archive DrawingView to archivePath
-    
-    
-    BOOL isSuccessfullySaved = [NSKeyedArchiver archiveRootObject:self.drawingInfo toFile:[self archivePath]];
     
     NSData *data = UIImagePNGRepresentation(self.drawingView.backgroundDrawingImage);
     NSString *imagePath = [[self archivePath] stringByAppendingString:@"ImagePath"];
     [data writeToFile:imagePath atomically:YES];
    
-    return isSuccessfullySaved;
 }
 
 // MARK: LineWidthView management

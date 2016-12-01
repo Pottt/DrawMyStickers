@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C48b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="19f-LP-CAV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C53a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="19f-LP-CAV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -48,6 +48,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mnT-o2-JyS">
+                        <barButtonItem key="leftBarButtonItem" image="Brush" id="OK6-bH-jcn">
+                            <connections>
+                                <action selector="brushTouched:" destination="BYZ-38-t0r" id="zzM-d4-MHR"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="lOD-p0-jNL">
                             <connections>
                                 <action selector="clearDrawing:" destination="BYZ-38-t0r" id="CJB-pz-jHU"/>
@@ -55,6 +60,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="brushButton" destination="OK6-bH-jcn" id="c6T-xf-Yin"/>
                         <outlet property="drawingView" destination="Lco-qP-fA2" id="mTp-ep-YvC"/>
                         <outlet property="slider" destination="aV0-aY-95F" id="HIf-ev-3SV"/>
                     </connections>
@@ -82,4 +88,7 @@
             <point key="canvasLocation" x="133.59999999999999" y="-543.77811094452773"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Brush" width="22" height="22"/>
+    </resources>
 </document>
