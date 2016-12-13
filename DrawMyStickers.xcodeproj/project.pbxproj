@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		4E0AA00F1DD1029600FB51F4 /* DrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0AA00E1DD1029600FB51F4 /* DrawingView.m */; };
 		4E0AA0151DD108B200FB51F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E0AA0141DD108B200FB51F4 /* CoreGraphics.framework */; };
+		4E3670D71DF0576E0007CC5E /* ColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3670D61DF0576E0007CC5E /* ColorPickerView.m */; };
+		4E3670D91DF057F80007CC5E /* ColorPickerViewXIB.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E3670D81DF057F80007CC5E /* ColorPickerViewXIB.xib */; };
+		4E48C5981DF5B1E700BA4B3C /* PopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E48C5971DF5B1E700BA4B3C /* PopViewController.m */; };
 		4E6D25A21DD0F43A003214E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6D25A11DD0F43A003214E9 /* main.m */; };
 		4E6D25A51DD0F43A003214E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6D25A41DD0F43A003214E9 /* AppDelegate.m */; };
 		4E6D25A81DD0F43A003214E9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6D25A71DD0F43A003214E9 /* MainViewController.m */; };
-		4E6D25AB1DD0F43A003214E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E6D25A91DD0F43A003214E9 /* Main.storyboard */; };
+		4E6D25AB1DD0F43A003214E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E6D25A91DD0F43A003214E9 /* Main.storyboard */; settings = {ASSET_TAGS = (pop, ); }; };
 		4E6D25AD1DD0F43A003214E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E6D25AC1DD0F43A003214E9 /* Assets.xcassets */; };
 		4E6D25B01DD0F43A003214E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E6D25AE1DD0F43A003214E9 /* LaunchScreen.storyboard */; };
 		4ECD42641DE1F910005561E3 /* LineWidthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECD42631DE1F910005561E3 /* LineWidthView.m */; };
@@ -22,6 +25,11 @@
 		4E0AA00D1DD1029600FB51F4 /* DrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingView.h; sourceTree = "<group>"; };
 		4E0AA00E1DD1029600FB51F4 /* DrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingView.m; sourceTree = "<group>"; };
 		4E0AA0141DD108B200FB51F4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4E3670D51DF0576E0007CC5E /* ColorPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColorPickerView.h; path = ../ColorPickerView.h; sourceTree = "<group>"; };
+		4E3670D61DF0576E0007CC5E /* ColorPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColorPickerView.m; path = ../ColorPickerView.m; sourceTree = "<group>"; };
+		4E3670D81DF057F80007CC5E /* ColorPickerViewXIB.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorPickerViewXIB.xib; sourceTree = "<group>"; };
+		4E48C5961DF5B1E700BA4B3C /* PopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopViewController.h; sourceTree = "<group>"; };
+		4E48C5971DF5B1E700BA4B3C /* PopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopViewController.m; sourceTree = "<group>"; };
 		4E6D259D1DD0F43A003214E9 /* DrawMyStickers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawMyStickers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E6D25A11DD0F43A003214E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4E6D25A31DD0F43A003214E9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -78,9 +86,14 @@
 			children = (
 				4E6D25A31DD0F43A003214E9 /* AppDelegate.h */,
 				4E6D25A41DD0F43A003214E9 /* AppDelegate.m */,
+				4E3670D51DF0576E0007CC5E /* ColorPickerView.h */,
+				4E3670D61DF0576E0007CC5E /* ColorPickerView.m */,
+				4E3670D81DF057F80007CC5E /* ColorPickerViewXIB.xib */,
 				4E6D25A61DD0F43A003214E9 /* MainViewController.h */,
 				4E6D25A71DD0F43A003214E9 /* MainViewController.m */,
 				4E6D25A91DD0F43A003214E9 /* Main.storyboard */,
+				4E48C5961DF5B1E700BA4B3C /* PopViewController.h */,
+				4E48C5971DF5B1E700BA4B3C /* PopViewController.m */,
 				4ECD42621DE1F910005561E3 /* LineWidthView.h */,
 				4ECD42631DE1F910005561E3 /* LineWidthView.m */,
 				4E0AA00D1DD1029600FB51F4 /* DrawingView.h */,
@@ -127,6 +140,9 @@
 		4E6D25951DD0F43A003214E9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					pop,
+				);
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Jerome Pottier";
 				TargetAttributes = {
@@ -162,6 +178,7 @@
 			files = (
 				4E6D25B01DD0F43A003214E9 /* LaunchScreen.storyboard in Resources */,
 				4E6D25AD1DD0F43A003214E9 /* Assets.xcassets in Resources */,
+				4E3670D91DF057F80007CC5E /* ColorPickerViewXIB.xib in Resources */,
 				4E6D25AB1DD0F43A003214E9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,7 +192,9 @@
 			files = (
 				4E6D25A81DD0F43A003214E9 /* MainViewController.m in Sources */,
 				4ECD42641DE1F910005561E3 /* LineWidthView.m in Sources */,
+				4E3670D71DF0576E0007CC5E /* ColorPickerView.m in Sources */,
 				4E6D25A51DD0F43A003214E9 /* AppDelegate.m in Sources */,
+				4E48C5981DF5B1E700BA4B3C /* PopViewController.m in Sources */,
 				4E6D25A21DD0F43A003214E9 /* main.m in Sources */,
 				4E0AA00F1DD1029600FB51F4 /* DrawingView.m in Sources */,
 			);
